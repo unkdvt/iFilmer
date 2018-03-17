@@ -44,6 +44,10 @@
             this.sts = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtlng = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txty = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +82,7 @@
             this.lstsearchresult.Size = new System.Drawing.Size(322, 213);
             this.lstsearchresult.TabIndex = 3;
             this.lstsearchresult.UseCompatibleStateImageBehavior = false;
-            this.lstsearchresult.View = System.Windows.Forms.View.Details;
+            this.lstsearchresult.View = System.Windows.Forms.View.Tile;
             this.lstsearchresult.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -95,7 +99,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(340, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(351, 329);
+            this.pictureBox1.Size = new System.Drawing.Size(285, 329);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -115,7 +119,7 @@
             this.textBox2.Location = new System.Drawing.Point(340, 454);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(351, 21);
+            this.textBox2.Size = new System.Drawing.Size(291, 21);
             this.textBox2.TabIndex = 6;
             // 
             // savePoster
@@ -153,7 +157,7 @@
             this.sts});
             this.statusStrip1.Location = new System.Drawing.Point(0, 480);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(699, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(639, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -175,14 +179,53 @@
             this.textBox4.Location = new System.Drawing.Point(340, 344);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(106, 21);
+            this.textBox4.Size = new System.Drawing.Size(62, 21);
             this.textBox4.TabIndex = 12;
+            this.textBox4.Text = "Langauge :";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtlng
+            // 
+            this.txtlng.Location = new System.Drawing.Point(408, 344);
+            this.txtlng.Name = "txtlng";
+            this.txtlng.ReadOnly = true;
+            this.txtlng.Size = new System.Drawing.Size(219, 21);
+            this.txtlng.TabIndex = 13;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // txty
+            // 
+            this.txty.Location = new System.Drawing.Point(408, 371);
+            this.txty.Multiline = true;
+            this.txty.Name = "txty";
+            this.txty.ReadOnly = true;
+            this.txty.Size = new System.Drawing.Size(219, 21);
+            this.txty.TabIndex = 15;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(340, 371);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(62, 21);
+            this.textBox6.TabIndex = 14;
+            this.textBox6.Text = "Genres :";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 502);
+            this.ClientSize = new System.Drawing.Size(639, 502);
+            this.Controls.Add(this.txty);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtlng);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.statusStrip1);
@@ -222,6 +265,10 @@
         private System.Windows.Forms.ToolStripStatusLabel sts;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtlng;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TextBox txty;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 
