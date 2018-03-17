@@ -42,10 +42,26 @@ namespace iFilmer
                 mvname = movie.Title;
                 var imgurl = "http://image.tmdb.org/t/p/w500/" + movie.PosterPath;
                 textBox2.Text = pictureBox1.ImageLocation = imgurl;
-                txtlng.Text = movie.OriginalLanguage;
+
+                switch (movie.OriginalLanguage)
+                {
+                    case "en":
+                        txtlng.Text = "English";
+                        break;
+                    case "ti":
+                        txtlng.Text = "tamil";
+                        break;
+                    case "hi":
+                        txtlng.Text = "Hindi";
+                        break;
+                    default:
+                        txtlng.Text = movie.OriginalLanguage;
+                        break;
+                }
+                txty.Text = "";
                 foreach (Genre g in movie.Genres)
                 {
-                    txty.Text = g.Name;
+                    txty.Text += g.Name + ", ";
                 }
             }
         }
