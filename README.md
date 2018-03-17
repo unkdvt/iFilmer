@@ -1,2 +1,2 @@
 # iFilmer
-Scrap IMDB database
+Scrap TMDB database
