@@ -28,153 +28,200 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.poster = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txttittle = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbltitle = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.poster)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lstsearchresult = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.savePoster = new System.Windows.Forms.SaveFileDialog();
+            this.button3 = new System.Windows.Forms.Button();
+            this.selectFilmFolder = new System.Windows.Forms.FolderBrowserDialog();
+            this.lstFilms = new System.Windows.Forms.ListBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.sts = new System.Windows.Forms.ToolStripStatusLabel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // poster
-            // 
-            this.poster.Location = new System.Drawing.Point(12, 12);
-            this.poster.Name = "poster";
-            this.poster.Size = new System.Drawing.Size(375, 423);
-            this.poster.TabIndex = 0;
-            this.poster.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(397, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tittle :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(397, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Year :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(397, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Genres :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(397, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "IMDB Rating :";
-            // 
-            // txttittle
-            // 
-            this.txttittle.Location = new System.Drawing.Point(400, 15);
-            this.txttittle.Name = "txttittle";
-            this.txttittle.Size = new System.Drawing.Size(255, 20);
-            this.txttittle.TabIndex = 9;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(661, 12);
+            this.button1.Location = new System.Drawing.Point(259, 205);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "🔍Search";
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbltitle
+            // textBox1
             // 
-            this.lbltitle.AutoSize = true;
-            this.lbltitle.Location = new System.Drawing.Point(436, 49);
-            this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(13, 13);
-            this.lbltitle.TabIndex = 11;
-            this.lbltitle.Text = "--";
+            this.textBox1.Location = new System.Drawing.Point(12, 207);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(238, 21);
+            this.textBox1.TabIndex = 2;
             // 
-            // label9
+            // lstsearchresult
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(436, 75);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "--";
+            this.lstsearchresult.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lstsearchresult.FullRowSelect = true;
+            this.lstsearchresult.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lstsearchresult.Location = new System.Drawing.Point(12, 234);
+            this.lstsearchresult.MultiSelect = false;
+            this.lstsearchresult.Name = "lstsearchresult";
+            this.lstsearchresult.Size = new System.Drawing.Size(322, 213);
+            this.lstsearchresult.TabIndex = 3;
+            this.lstsearchresult.UseCompatibleStateImageBehavior = false;
+            this.lstsearchresult.View = System.Windows.Forms.View.Details;
+            this.lstsearchresult.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // label10
+            // columnHeader1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(477, 102);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "--";
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 238;
             // 
-            // label11
+            // columnHeader2
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(450, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "--";
+            this.columnHeader2.Text = "ID";
+            this.columnHeader2.Width = 76;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(340, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(351, 329);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(260, 453);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Save Poster";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(340, 454);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(351, 21);
+            this.textBox2.TabIndex = 6;
+            // 
+            // savePoster
+            // 
+            this.savePoster.DefaultExt = "*.jpg";
+            this.savePoster.RestoreDirectory = true;
+            this.savePoster.Title = "Save Poster";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Select Film Folder";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // selectFilmFolder
+            // 
+            this.selectFilmFolder.Description = "Select Root folder witch contains films";
+            // 
+            // lstFilms
+            // 
+            this.lstFilms.FormattingEnabled = true;
+            this.lstFilms.Location = new System.Drawing.Point(12, 38);
+            this.lstFilms.Name = "lstFilms";
+            this.lstFilms.Size = new System.Drawing.Size(323, 160);
+            this.lstFilms.TabIndex = 9;
+            this.lstFilms.SelectedIndexChanged += new System.EventHandler(this.lstFilms_SelectedIndexChanged);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sts});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 480);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(699, 22);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // sts
+            // 
+            this.sts.Name = "sts";
+            this.sts.Size = new System.Drawing.Size(0, 17);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(131, 10);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(204, 21);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(340, 344);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(106, 21);
+            this.textBox4.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 448);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.lbltitle);
+            this.ClientSize = new System.Drawing.Size(699, 502);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.lstFilms);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lstsearchresult);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txttittle);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.poster);
+            this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.poster)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox poster;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txttittle;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbltitle;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListView lstsearchresult;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.SaveFileDialog savePoster;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.FolderBrowserDialog selectFilmFolder;
+        private System.Windows.Forms.ListBox lstFilms;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel sts;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
