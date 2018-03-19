@@ -41,13 +41,15 @@
             this.selectFilmFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.lstFilms = new System.Windows.Forms.ListBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.sts = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stonline = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtlng = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txty = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.sts = new System.Windows.Forms.ToolStripStatusLabel();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +156,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stonline,
             this.sts});
             this.statusStrip1.Location = new System.Drawing.Point(0, 480);
             this.statusStrip1.Name = "statusStrip1";
@@ -161,10 +164,10 @@
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // sts
+            // stonline
             // 
-            this.sts.Name = "sts";
-            this.sts.Size = new System.Drawing.Size(0, 17);
+            this.stonline.Name = "stonline";
+            this.stonline.Size = new System.Drawing.Size(0, 17);
             // 
             // textBox3
             // 
@@ -176,7 +179,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(340, 344);
+            this.textBox4.Location = new System.Drawing.Point(340, 345);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(62, 21);
@@ -186,7 +189,7 @@
             // 
             // txtlng
             // 
-            this.txtlng.Location = new System.Drawing.Point(408, 344);
+            this.txtlng.Location = new System.Drawing.Point(408, 345);
             this.txtlng.Name = "txtlng";
             this.txtlng.ReadOnly = true;
             this.txtlng.Size = new System.Drawing.Size(219, 21);
@@ -217,6 +220,17 @@
             this.textBox6.TabIndex = 14;
             this.textBox6.Text = "Genres :";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // sts
+            // 
+            this.sts.Name = "sts";
+            this.sts.Size = new System.Drawing.Size(0, 17);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.WorkerSupportsCancellation = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             // 
             // Form1
             // 
@@ -262,13 +276,15 @@
         private System.Windows.Forms.FolderBrowserDialog selectFilmFolder;
         private System.Windows.Forms.ListBox lstFilms;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel sts;
+        private System.Windows.Forms.ToolStripStatusLabel stonline;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox txtlng;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox txty;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ToolStripStatusLabel sts;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
 

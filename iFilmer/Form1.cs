@@ -9,7 +9,7 @@ using TMDbLib.Client;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
-
+using IsNetworkAvailable;
 namespace iFilmer
 {
     public partial class Form1 : Form
@@ -18,12 +18,25 @@ namespace iFilmer
         {
             InitializeComponent();
             //   textBox3.Text = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "iFilmer\\Posters\\");
+            if (!IsAvailable.Available())
+            {
+                DialogResult dr = MessageBox.Show("Internet connection not availible", "Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Abort)
+                    Environment.Exit(0);
+                else if (dr == DialogResult.Retry)
+                {
+                    System.Diagnostics.Process.Start(Application.ExecutablePath);
+                    Environment.Exit(0);
+                }
+
+            }
+            else
+                stonline.Text = "Online";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            //   checkBox1.CheckState = CheckState.Checked;
+            backgroundWorker2.RunWorkerAsync(stonline);
         }
 
         TMDbClient client = new TMDbClient("0bbad6ec9cff1a17b613d802f0eac5fd");
@@ -179,6 +192,33 @@ namespace iFilmer
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
 
+        }
+
+        public void E(Control con, bool enable)
+        {
+            if (con != null)
+            {
+                foreach (Control c in con.Controls)
+                {
+                    c.Enabled = enable;
+                }
+
+                try
+                {
+                    con.Invoke((MethodInvoker)(() => con.Enabled = enable));
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            if (IsAvailable.Available())
+                stonline.Text = "Online";
+            if (!IsAvailable.Available())
+                stonline.Text = "Offline";
         }
     }
 }
