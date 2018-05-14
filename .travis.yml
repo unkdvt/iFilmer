@@ -1,11 +1,15 @@
 language: csharp
 solution: iFilmer.sln
 
-deploy:
-  provider: releases
-  api_key:
-   secure: "d77e66d333b47fdb5af128c79318861fb7dfc6dc"
-  file: "$TRAVIS_BUILD_DIR/iFilmer.exe"
-  skip_cleanup: true
-  on:
-    tags: true
+    jobs:
+  include:
+    - script: "Running unit tests (1)"
+    - script: "Running unit tests (2)"
+    - stage: GitHub Release
+      script: echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        skip_cleanup: true
+        on:
+          tags: true
