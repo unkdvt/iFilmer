@@ -3,7 +3,8 @@ solution: iFilmer.sln
 
 deploy:
   provider: releases
-  api_key: "d77e66d333b47fdb5af128c79318861fb7dfc6dc"
+  api_key:
+   secure: "d77e66d333b47fdb5af128c79318861fb7dfc6dc"
   file: "$TRAVIS_BUILD_DIR/iFilmer.exe"
   skip_cleanup: true
   on:
