@@ -76,6 +76,8 @@ namespace iFilmer
                 {
                     txty.Text += g.Name + ", ";
                 }
+
+                textBox5.Text = movie.ReleaseDate.ToString();
             }
         }
 
