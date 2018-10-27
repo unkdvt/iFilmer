@@ -42,14 +42,16 @@
             this.lstFilms = new System.Windows.Forms.ListBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.stonline = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sts = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtlng = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.txty = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.sts = new System.Windows.Forms.ToolStripStatusLabel();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +171,11 @@
             this.stonline.Name = "stonline";
             this.stonline.Size = new System.Drawing.Size(0, 17);
             // 
+            // sts
+            // 
+            this.sts.Name = "sts";
+            this.sts.Size = new System.Drawing.Size(0, 17);
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(131, 10);
@@ -221,22 +228,38 @@
             this.textBox6.Text = "Genres :";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // sts
-            // 
-            this.sts.Name = "sts";
-            this.sts.Size = new System.Drawing.Size(0, 17);
-            // 
             // backgroundWorker2
             // 
             this.backgroundWorker2.WorkerReportsProgress = true;
             this.backgroundWorker2.WorkerSupportsCancellation = true;
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(408, 398);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(219, 21);
+            this.textBox5.TabIndex = 17;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(340, 398);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(62, 21);
+            this.textBox7.TabIndex = 16;
+            this.textBox7.Text = "Year :";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 502);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.txty);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.txtlng);
@@ -285,6 +308,8 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.ToolStripStatusLabel sts;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
 
